@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="genie">
+<head>
+    <meta charset="UTF-8">
+    <title>Applicare Genie</title>
+    <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="assets/webfonts/uicons-regular-rounded.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="styles/font-awesome.min.css">
+    <script src="libs/angular.min.js"></script>
+    <script src="libs/angular-ui-router.min.js"></script>
+    <script src="libs/angular-route.js"></script>
+    <script src="libs/angular-local-storage.min.js"></script>
+    <script src="libs/angular-animate.js"></script>
+    <base href="/genie/">
+    
+  <!--  <script src="libs/angular-route.min.js"></script> -->
+    <script src="libs/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+    <link rel="stylesheet" href="libs/virtual-select.min.css" />
+	<script src="libs/virtual-select.js"></script>
+	<script src="libs/virtual-select.min.js"></script>
+	<link rel="stylesheet" href="libs/toaster.css">
+	<script src="libs/toaster.js"></script>
+    <script src="app/app.module.js"></script>
+    <script src="app/app.config.js"></script>
+    <script src="app/controllers/mainController.js"></script>
+    <script src="app/services/sessionService.js"></script>
+    <script src="app/controllers/loginController.js"></script>
+    <script src="app/controllers/homeController.js"></script>
+    <script src="app/controllers/envFormController.js"></script>
+    <script src="app/controllers/envaFormController.js"></script>
+    
+
+</head>
+<body ng-controller="MainController as mainCtrl">
+    <toaster-container toaster-options="{'time-out': 3000, 'position-class': 'toast-top-right', 'close-button': false}"></toaster-container>
+    <div class="maincontainer" ng-show="!mainCtrl.isLoginPage()">
+        <nav class="left-menu" ng-class="{'menu-closed': mainCtrl.isMenuClosed}">
+            <button class="menu-toggle" ng-click="mainCtrl.toggleMenu()">
+                <i class="fa fa-bars"></i>
+            </button>
+            <div class="menu-items" ng-if="!mainCtrl.isMenuClosed">
+                <div class="menu-item">
+                    <a class="nav-link" href="#/chatbot">
+                        <span>Genie</span>
+                    </a>
+                </div>
+            </div>
+        </nav>
+
+        <div class="main-content">
+           <header class="top-header">
+    <div class="header-content">
+        <div class="homeLogo">
+            <img src="assets/arcturus_big_logo.svg" alt="Company Logo">
+        </div>
+        
+        <!-- Right-side buttons container -->
+        <div class="right-buttons">
+            <!-- New menu button  -->
+            <div class="menu-button" ng-class="{ 'open': mainCtrl.isMenuDropdownOpen }">
+							<button class="circle-button" ng-click="mainCtrl.toggleMenuDropdown()">
+        					<i class="fi-rr-grid rightmenu"></i>
+   							 </button>
+							<div class="dropdown-rightmenu" ng-if="mainCtrl.isMenuDropdownOpen">
+                    <a class="env-config-link" ng-click="mainCtrl.genieConfig()">Genie Configuration</a>
+                </div>
+            </div>
+            <!-- User menu button -->
+            <div class="user-menu" ng-class="{ 'open': mainCtrl.isUserMenuOpen }">
+                <button class="usercircle-button" ng-click="mainCtrl.toggleUserMenu()">
+                    <span>{{mainCtrl.userId}}</span>
+                </button>
+                <div class="user-dropdown-menu" ng-if="mainCtrl.isUserMenuOpen">
+                    <a class="logoutBtn" ng-click="mainCtrl.logout()">Logout</a> 
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+            
+            <div class="genie-scroll" ui-view="mainView" style="overflow-y:auto;"></div>
+        </div>
+    </div>
+
+    <div ng-show="mainCtrl.isLoginPage()">
+        <div class="genie-scroll" ui-view="loginView" style="overflow-y:auto;"></div>
+    </div>
+
+</body>
+</html>

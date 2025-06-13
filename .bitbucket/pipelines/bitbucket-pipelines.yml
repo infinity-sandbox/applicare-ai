@@ -1,0 +1,33 @@
+image: python:3.12.6
+
+pipelines:
+  default:
+    - step:
+        name: Build and Test
+        script:
+          - cd backend
+          - python -m pip install --upgrade pip
+          - pip install -e .
+          - python -m pytest --import-mode=append
+
+  branches:
+    dev:
+      - step:
+          name: Build and Test (Dev)
+          script:
+            - cd backend
+            - python -m pip install --upgrade pip
+            - pip install -e .
+            - python -m pytest --import-mode=append
+            # Add your development deployment commands here
+
+    main:
+      - step:
+          name: Build and Deploy (Prod)
+          script:
+            - cd backend
+            - python -m pip install --upgrade pip
+            - pip install -e .
+            - python -m pytest --import-mode=append
+            # Add your production deployment commands here
+            

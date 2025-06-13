@@ -1,0 +1,16 @@
+To run the project, follow these steps:
+1. Install the Flutter setup if you haven’t already.
+2. Unzip the file I sent you, navigate to the folder, and run the following commands:
+
+flutter pub get  
+flutter pub run flutter_launcher_icons  
+
+3. To find available simulator devices, run:
+
+flutter devices  
+
+This will list iPhone simulator devices along with their device IDs.
+
+4. Use the device ID from the output to run the project with:
+
+flutter run -d {your_simulator_device_id}  

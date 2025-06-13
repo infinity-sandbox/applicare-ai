@@ -1,0 +1,136 @@
+<div class="homeContainer">
+    <div class="main-content">
+		<div class="content-area genie-scroll" ng-if="!showChatContent">
+			<div class="initial-message" >
+				<p class="intro-text">Hello, I am Genie!</p>
+				<button class="ask-me-button"
+					ng-click="homeCtrl.toggleChatContent()">Ask Me</button>
+				<img src="assets/genie_big.png" alt="Chatbot" class="initial-image">
+			</div>
+		</div>
+		<div class="chat-content-area" ng-if="showChatContent">
+					<div class="chat-container"
+						style="width: 100%; height: 100%; display: flex; flex-direction: column; background-color: white; border-radius: 0.53rem !important;">
+						<div class="chat-messages acr-custom-scroll"
+							style="flex-grow: 1; padding: 10px; overflow-y: auto;">
+							<div class="message-container" ng-repeat="message in messages"
+								ng-class="{'user-message': message.type === 'user', 'bot-message': message.type === 'bot'}">
+
+								<div class="user" ng-if="message.type === 'user'">
+									 {{message.text}}</div>
+
+								<div class="botMsgContent" ng-if="message.type === 'bot'">
+									<div class="botContainer" ng-if="message.type === 'bot'">
+										<!-- Loading dots if bot response is still loading -->
+										<div ng-if="message.loading" class="loading-dots">
+											<span class="dot"
+												style="width: 6px; height: 6px; margin: 0 2px; border-radius: 50%; display: inline-block; animation: bounce 1s infinite;"></span>
+											<span class="dot"
+												style="width: 6px; height: 6px; margin: 0 2px; border-radius: 50%; display: inline-block; animation: bounce 1s infinite 0.2s;"></span>
+											<span class="dot"
+												style="width: 6px; height: 6px; margin: 0 2px; border-radius: 50%; display: inline-block; animation: bounce 1s infinite 0.4s;"></span>
+										</div>
+										
+
+										<div class="bot-message" ng-if="!message.loading" ng-bind-html="message.text">
+										</div>
+										<button ng-if="message.rawText && message.rawText.includes('Connection timeout...')" 
+										            class="retry-btn" 
+										            ng-click="retry()">
+										        Retry
+										 </button>
+									</div>
+						<div class="reaction-icons" ng-if="!$first && !message.loading && message.text !== 'No Response'" style="position: relative;margin-top: 6px;float: left;margin-left: 2px;">
+							        <span class="botMsgLike" ng-click="likeMessage(message)" style="cursor: pointer; margin-right: 10px;" ng-style="{'color': message.isLiked ? '#007bff' : '#b3b1af'}"
+								    role="button" tabindex="0"> <i class="fi-rr-social-network" title="Like"></i>
+									</span> 
+									<span class="botMsgDislike" ng-click="!message.isDisliked && dislikeMessage(message)" style="cursor: pointer; margin-right: 10px;" 
+         								 ng-style="{'color': message.isDisliked ? '#dc594e' : '#b3b1af', 'cursor': message.isDisliked ? 'not-allowed' : 'pointer'}">
+       									 <i class="fi-rr-hand" title="Dislike"></i>
+									</span>
+									<!-- <span class="botMsgShare" ng-click="shareResponse(message)"
+											style="cursor: pointer; color: #b3b1af;">
+											<i class="fi fi-rr-share"></i>
+									</span> -->
+									<span class="botMsgRegenerate" ng-click="regenerateResponse(message)"
+											style="cursor: pointer; color: #b3b1af;"> <i
+											class="fi-rr-rotate-right" title="Regenerate"></i>
+									</span>
+									
+						  </div>
+						 </div>
+						</div>
+					</div>
+
+				</div>
+				<div id="feedbackBox"
+					style="display: none;position: absolute;z-index: 1001;bottom: 0px;right: 10px;background: white;padding: 10px 15px;box-shadow: rgba(0, 0, 0, 0.2) 1px 0px 8px 0px;width: 95%;">
+					<span ng-click="closeFeedbackBox($event)" 
+        				style="position: absolute;top: 10px;right: 10px;cursor: pointer;font-size: 20px;font-weight: bold;line-height: 15px;color: #7f7a7a;">
+        						&times;
+    				</span>
+					<h4 class="mb-10">Provide Your Feedback</h4>
+					<textarea ng-model="homeCtrl.feedbackText" placeholder="Type your feedback here..." rows="4"
+						style="width: 100%;height: 130px;border-radius: 5px!important;padding: 10px;resize: none;"></textarea>
+				<div style="display: flex;justify-content: flex-end;margin-top: 9px;">
+       					<button ng-click="submitFeedback()" style="padding: 6px 18px;background-color: #007bff;border: none;border-radius: 7px!important;color: white;font-size: 1.05rem;cursor: pointer;font-family: Arial, sans-serif;width: 7%;">Submit</button>
+    			</div>
+			</div>
+        </div>
+
+		 <div class="chat-input-area" ng-if="showChatContent">
+			<div class="chat-input-wrapper">
+				<input type="text" ng-model="homeCtrl.userQuestion"
+					class="chat-input"
+					placeholder="{{ isRecording && showListening ? 'Listening...' : 'Talk to your data...' }}"
+					ng-keypress="handleKeyPress($event)" ng-disabled="isRecording" />
+				<span class="timer" ng-if="isRecording && showListening">{{formattedTime}}</span>
+			</div>
+			<button class="send-icon" 
+	        		ng-click="startStopRecording()" 
+	        		ng-disabled="loading" 
+	        		title="{{ isRecording ? 'Stop Recording' : 'Start Recording' }}">
+	        		<!-- Icon is isolated in a span -->
+	        		<span class="microphone-icon" ng-class="{'fa fa-microphone': !isRecording, 'fa fa-dot-circle-o': isRecording}"></span>
+	    		</button>
+			<button class="send-button" ng-click="homeCtrl.sendQuestion()"
+				ng-disabled="loading || isRecording">Send</button>
+		</div> 
+	</div>
+	
+	<div class="modal-backdrop" id="modalBackdrop"></div>
+
+<!-- Modal -->
+<div class="modal" id="audioModal">
+  <div class="modal-header">
+    <h4 class="modal-title">Advanced Voice chat</h4>
+    <button class="close" ng-click="closeAudioModal()">×</button>
+  </div>
+  
+  <!-- Modal Body -->
+  <div class="modal-body">
+    <!-- Circle Animation -->
+    <div class="circl-container">
+      <div class="svg-box">
+        <div class="circle"></div>
+        <div class="circle delay1"></div>
+        <div class="circle delay2"></div>
+        <div class="circle delay3"></div>
+        <div class="circle delay4"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Footer -->
+  <div class="modal-footer">
+	  <button class="icon-circle mic-btn" ng-click="toggleMicrophone()">
+	    <span class="audiomic-icon" ng-class="micActive ? 'fa fa-microphone' : 'fa fa-microphone-slash'"></span>
+	  </button>
+	  <button class="icon-circle close-btn" ng-click="closeAudioModal()">
+	    <span class="fa fa-close"></span>
+	  </button>
+	</div>
+</div>
+
+
+</div>

@@ -1,0 +1,36 @@
+<style>
+.loading-gif {
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+}
+</style>
+<div class="mainLogin">
+	<div class="logo">
+		<img src="assets/arcturus_logo_white.gif" alt="Company Logo">
+	</div>
+	<div class="login-container">
+		<div class="login-box">
+			<h3 class="loginTxt">Login</h3>
+			<h5 class="consoleTxt">Applicare Console for Genie</h5>
+			<form ng-submit="loginCtrl.checkLoginDetails()">
+				<div class="input-group">
+					<label for="username">Email</label> <input type="text"
+						id="username" name="username" placeholder="Email"
+						ng-model="genieuserID" required>
+				</div>
+				<div class="input-group">
+					<label for="password">Password</label> <input type="password"
+						id="password" name="password" placeholder="password"
+						ng-model="geniepassword" required>
+				</div>
+				<button type="submit" class="login-button"
+					ng-class="{'loading': isLoading}">
+					<span ng-if="!isLoading">Login Now</span> <img ng-if="isLoading"
+						src="assets/loading.gif" alt="Loading..." class="loading-gif">
+				</button>
+			</form>
+			<p class="error-message" ng-if="showError">{{errorMessage}}</p>
+		</div>
+	</div>
+</div>

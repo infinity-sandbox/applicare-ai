@@ -1,0 +1,1191 @@
+/* General Styles */
+body {
+    font-family: 'Nunito', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+h2, h3 {
+    color: #333;
+}
+
+.wh100 {
+	width: 100%;
+	height:100%;
+}
+
+button {
+    padding: 10px;
+    cursor: pointer;
+}
+h2 {
+    min-width: 350px;
+}
+
+.right-buttons {
+    display: flex;
+    align-items: center;
+    gap: 10px; 
+}
+/* Login Page Styles */
+/* General Page Styles */
+
+/* Login Page Styles starts */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.mainLogin {
+    font-family: Arial, sans-serif;
+    background: #314566;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+    padding-bottom: 120px;
+}
+
+.login-container {
+    width: 100%;
+    max-width: 380px;
+    min-width: 400px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    padding: 40px 30px;
+}
+
+/*.logo img {
+    display: block;
+    margin: 0 auto 20px;
+    width: 80px;
+    height: auto;
+}
+*/
+h2 {
+    text-align: left;
+    color: #333;
+    margin-bottom: 10px;
+}
+.loginTxt {
+    color: #32c5d2;
+    text-align: center;
+    font-size: 30px;
+    font-weight: 400 !important;
+    margin-bottom: 10px;
+}
+
+.consoleTxt {
+	color: #6c7b88;
+	font-size: 12px;
+	text-align: center;
+	margin-bottom: 10px;
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group label {
+	font-size: 13px;
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #555;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px;
+    font-size: 13px;
+    border: 1px solid #ccc;
+    border-radius: 0.33rem !important;
+}
+
+.input-group input:focus {
+    outline: none;
+    border-color: #007bff;
+}
+
+.login-button {
+    width: 100%;
+    padding: 12px;
+    background: #007bff;
+    border: none;
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 0.33rem !important;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.login-button.loading , .login-button.loading:hover{
+    background: transparent; 
+}
+
+.login-button:hover {
+    background: #0056b3;
+}
+
+.logo img {
+    margin-right: 10px;
+    padding: 15px;
+    text-align: center;
+}
+.error-message {
+	margin-top: 10px;
+	text-align: center;
+	color: red;
+}
+/* Login Page Styles ends */
+
+/* Home Page Styles start */
+/* General container styles */
+
+input[type="text"]:hover, input[type="password"]:hover {
+    border-color: #1591ea;
+}
+
+.maincontainer {
+    display: flex;
+    height: 100vh; 
+}
+.homeContainer {
+	display: flex;
+    height: calc(100vh - 57px);
+}
+
+/* Left Menu styles */
+.left-menu {
+    background: linear-gradient(to bottom right, #224097, #1351ff);
+    color: white;
+    width: 200px;
+    transition: width 0.3s;
+    overflow: hidden; 
+}
+.left-menu {
+    width: 180px;
+}
+
+.menu-items {
+    display: flex;
+    flex-direction: column;
+}
+
+.menu-item {
+    padding: 5px;
+}
+.menu-item:hover{
+    background-color: rgba(255, 255, 255, 0.2);
+}
+.menu-item a {
+    text-decoration: none;
+    color: white;
+}
+/* Adjust styles for the closed menu */
+.menu-closed {
+    width: 60px;
+}
+
+/* Main Content Area styles */
+.main-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.env-config-link:hover {
+	cursor: pointer;
+}
+
+.logoutBtn {
+	cursor: pointer;
+}
+/* Header styles 
+.top-header {
+    background: transparent; 
+    color: white;
+    padding: 1px 15px 0px 0px;
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    position: relative;
+    width: 100%;
+    z-index: 10;
+}
+
+.header-content {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+*/
+.top-header {
+    width: 100%;
+    padding: 0px 10px 0px 0px;
+    background-color: white; 
+}
+
+.mb-10 {
+   margin-bottom: 10px;	
+}
+
+.mt-5 {
+   margin-top: 5px;	
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.homeLogo {
+    flex: 1;
+}
+
+/* Logo styles */
+.homeLogo img {
+    height: 50px;
+    width: auto;
+}
+
+/* Logout button styles */
+.logout-button {
+    background-color: #f44336;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+/* Content area styles */
+.content-area {
+    flex: 1;
+    margin-top: 10px; 
+    padding: 15px;
+    background-color: white;
+    overflow-y: auto; 
+}
+
+/* Chat input area styles */
+.chat-input-area {
+	padding: 10px;
+	align-items: center;
+	width: 100%;
+	display: flex;
+	background-color: white;
+	border-radius: 0.53rem !important;
+	border-top: 1px solid #ccc;
+}
+
+.chat-input-area input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+.chat-input-area .listening-placeholder {
+    flex: 1;
+    padding: 10px;
+    margin-right: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.chat-input-area button {
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+/* Menu toggle button styles */
+.menu-toggle {
+	background-color: transparent;
+	color: #d3d3d3;
+	border: none;
+	cursor: pointer;
+	width: 100%;
+	padding: 10px 5px;
+	text-align: left;
+	font-size: 20px;
+	margin-bottom: 25px;
+	margin-left: 15px;
+	margin-top: 10px;
+}
+
+.menu-toggle:hover {
+	color: white;
+}
+
+.usercircle-button {
+    background-color: #5f75e8;
+    padding: 11px;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    color: #fff;
+    border: none;
+    font-size: 17px;
+    line-height: 0px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.circle-button:hover {
+	background-color: #e4e4e4;
+}
+
+.user-menu {
+	position: relative;
+	display: inline-block;
+}
+
+.user-dropdown-menu {
+    position: absolute;
+    top: 37px;
+    right: 5px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    padding: 0px;
+    min-width: 60px;
+    z-index: 1000;
+    font-size: 13px;
+}
+
+.user-dropdown-menu a {
+	color: #646363 !important;
+	text-decoration: none!important;
+	display: block;
+	padding: 5px 10px;
+}
+
+.user-dropdown-menu a:hover {
+    background-color: #f1f1f1;
+}
+
+.nav-link {
+	text-decoration: none;
+	color: white;
+	padding: 10px;
+	text-align: center;
+	font-size: 16px;
+	display: block;
+	width: 100%;
+	box-sizing: border-box;
+}
+
+.initial-message {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.intro-text {
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+.ask-me-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 20px;
+    box-sizing: border-box;
+}
+
+.initial-image {
+    max-width: 100%;
+    height: 1800px;
+    margin-bottom: 20px;
+}
+
+/* Genie chat content starts */
+/* Chat content container */
+#messageBox {
+    position: fixed;
+    z-index: 1000;
+    bottom: 35px;
+    right: 30px;
+    min-height: 70%;
+    min-width: 410px;
+    max-width: 450px;
+    background: rgb(255, 255, 255);
+    border-radius: 10px !important;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 8px;
+}
+
+/* Header of the chat box */
+.message-box-header {
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border-top-left-radius: 10px !important;
+    border-top-right-radius: 10px !important;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Button to minimize the chat */
+.closeMsgBtn {
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+.message-container {
+    margin-bottom: 1px;
+    display: flex;
+    padding: 8px;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+}
+
+.mb-10 {
+	margin-bottom: 10px;
+}
+
+.message-container .user {
+    background-color: #ebebeb;
+    border-radius: 20px 20px 0px 20px !important;
+    text-align: left;
+    align-self: flex-start;
+    padding: 10px 15px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #3c3c3c;
+    margin-left: auto;
+}
+
+.message-container .botContainer {
+    display: flex;
+    gap: 100px;
+}
+
+.message-container .botContainer {
+    background-color: #1382f7;
+    border-radius: 30px 30px 30px 0px !important;
+    text-align: left;
+    align-self: flex-end;
+    padding: 10px 15px;
+    margin-left: auto;
+    color: white;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.botMsgContent {
+	text-align: left;
+    align-self: flex-end;
+    margin-right: auto;
+}
+
+.loading-dots {
+    display: flex;
+    justify-content: flex-end; 
+    align-items: center;
+}
+
+.dot {
+    width: 6px;
+    height: 6px;
+    background-color: white;
+    border-radius: 50% !important;
+    animation: bounce 1s infinite ease-in-out;
+    margin: 0 2px;
+}
+
+.chat-input-container {
+    padding: 5px;
+    display: flex;
+    align-items: center;
+}
+
+.chat-input {
+    flex-grow: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 0.53rem !important;
+}
+
+/* Reactions container */
+.reaction-icons {
+    position: relative;
+    margin-right: 5px;
+    margin-top: 3px;
+    float: right;
+}
+
+/* Icons for reactions */
+.reaction-icons span {
+    cursor: pointer;
+    margin-right: 10px;
+    font-size:14px;
+}
+
+.reaction-icons .botMsgLike {
+    color: #007bff;
+    font-size:14px;
+}
+
+.reaction-icons .botMsgDislike {
+    color: #b3b1af;
+    font-size:14px;
+}
+
+.reaction-icons .botMsgRegenerate {
+    color: #b3b1af;
+    font-size:14px;
+}
+
+/* Loading dots animation */
+.loading-dots .dot {
+    width: 6px;
+    height: 6px;
+    margin: 0 2px;
+    border-radius: 50%;
+    display: inline-block;
+    animation: bounce 1s infinite;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-5px);
+    }
+    60% {
+        transform: translateY(-2px);
+    }
+}
+
+.chat-content-area {
+	display: flex;
+    flex: 1;
+    overflow-y: auto;
+}
+
+.chat-input-area input:focus {
+  border-color: #1d4ed8; 
+  box-shadow: 0 0 5px rgba(29, 78, 216, 0.5); 
+  outline: none;
+}
+
+/* Genie chat content ends */
+
+.user-environment-form {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	background-color: #fff;
+	padding: 2rem;
+	border-radius: 8px;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+	width: 100%;
+	height: 90vh;
+}
+
+.envContainer {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	background-color: #fff;
+	padding: 2rem;
+	border-radius: 8px;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+	width: 100%;
+}
+
+.envContainer h1, .user-environment-form h1{
+	font-size: 1.8rem;
+	margin-bottom: 0.6rem;
+	color: #333;
+	text-align: left;
+}
+
+.envContainer p, .user-environment-form p{
+	font-size: 1rem;
+	color: #3a3a3a;
+	margin-bottom: 1rem;
+	text-align: center;
+}
+
+.envContainer form , .user-environment-form form {
+	display: flex;
+    flex-direction: column;
+    width: 25%;
+    min-width: 20%;
+}
+
+.envContainer label, .user-environment-form label {
+	font-weight: bold;
+	font-size: 0.9rem;
+	color: #393434;
+	margin-bottom: 0.3rem;
+	text-align: left;
+	min-width: 250px;
+	display: inline-block;
+}
+
+.envContainer input, .user-environment-form input{
+	padding: 0.5rem;
+    /*margin-bottom: 1rem;*/
+    border: 1px solid transparent;
+    border-radius: 5px;
+    font-size: 0.8rem;
+    background-color: #e6f7ff;
+    min-width: 310px;
+}
+
+.envContainer input:focus, .user-environment-form input:focus{
+	outline: none;
+	border-color: #007bff;
+	box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.saveEnvConfig {
+	padding: 0.6rem;
+    font-size: 0.8rem;
+	color: #fff;
+	background-color: #007bff;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+	min-width: 240px;
+	transition: background-color 0.3s ease;
+}
+
+.saveEnvConfig:hover {
+	background-color: #0a63c4;
+}
+
+.required-label::after {
+  content: " *";
+  color: red;
+  font-weight: bold;
+  margin-left: 0rem;
+}
+
+.optional-label::after {
+  content: " (Optional)";
+  color: grey;
+  font-size: 0.9em;
+  margin-left: 0rem;
+}
+
+.glyphicon {
+	color : grey;
+	line-height: 0px!important;
+}
+
+.glyphicon:hover {
+ color: darkslategrey;
+}
+
+.input-group {
+    position: relative!important;
+    display: block!important;
+}
+
+.dropdown-rightmenu {
+    position: absolute;
+    top: 46px;
+    right: 60px;
+    background-color: white;
+    border-radius: 4px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+    overflow: hidden;
+    min-width: 160px;
+    z-index: 1000;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.menu-button.open .dropdown-rightmenu {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Style each link */
+.dropdown-rightmenu a {
+    display: block;
+    padding: 10px 15px;
+    color: #333;
+    text-decoration: none;
+    font-size: 14px;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.dropdown-rightmenu a:hover {
+    background-color: #f5f5f5;
+    color: #007bff;
+    text-decoration: none;
+}
+
+/* Container button styling */
+.circle-button {
+    background-color: transparent;
+    padding: 9px;
+    width: 37px;
+    height: 37px;
+    border-radius: 50%;
+    color: #f8f8f8;
+    border: none;
+    font-size: 17px;
+    line-height: 5px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.circle-button .rightmenu {
+	color: #727272;
+}
+/* Icon grid styling */
+.icon-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 0.3em);
+    grid-template-rows: repeat(3, 0.3em);
+    gap: 0.15em;
+    position: absolute;
+    top: 18px;
+    right: 64px;
+}
+
+.icon-box {
+    width: 100%;
+    height: 100%;
+    background-color: #a3a3a6;
+    transition: background-color 0.3s;
+}
+
+/* Change icon-box color on hover of circle-button */
+.circle-button:hover .icon-box {
+    background-color: #696969;
+}
+
+
+/* custom font end */
+.genie-scroll {
+	overflow-y: auto; 
+}
+/* Custom scrollbar styles start */
+.genie-scroll::-webkit-scrollbar {
+    width: 8px; /* Width of the scrollbar */
+}
+
+.genie-scroll::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+.genie-scroll::-webkit-scrollbar-thumb {
+    background-color: #b3b3b3;
+    border-radius: 10px;
+    border: 2px solid #f1f1f1;
+}
+
+.genie-scroll::-webkit-scrollbar-thumb:hover {
+    background-color: #8a8a8a; 
+}
+
+.genie-scroll {
+    scrollbar-color: #b3b3b3 #f1f1f1;
+    scrollbar-width: thin;
+}
+/* Custom scrollbar styles end */
+.vscomp-ele {
+    display: inline-block;
+    max-width: 100%!important;
+    width: 100%!important;
+    min-width: 310px;
+}
+.vscomp-wrapper {
+    color: #333;
+    flex-wrap: wrap;
+    font-family: 'Nunito', sans-serif;
+    font-size: 0.8rem!important;
+    position: relative;
+    text-align: left;
+    width: 100%;
+}
+.vscomp-value {
+    opacity: 0.9!important;
+}
+
+.toast {
+    z-index: 9999;
+}
+.st-Clr {
+	color : #186cdc;
+}
+.regBtn {
+	transform: scaleX(-1);
+}
+.send-icon {
+    padding: 10px;
+    color: #007bff;
+    margin: 0px 5px 0px 5px;
+    background-color: transparent;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.send-icon:hover {
+    background-color: #e6f3ff;
+    color: #0056b3;
+}
+
+/* Send button */
+.send-button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 0.53rem!important;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.send-button:hover {
+    background-color: #0056b3;
+    box-shadow: 0 0 10px rgba(0, 123, 255, 0.5);
+}
+
+.send-button:disabled {
+    background-color: #d6d6d6;
+    cursor: not-allowed;
+    box-shadow: none;
+}
+
+.waveform-canvas {
+    width: 80%;
+    border: 1px solid #ccc;
+}
+
+.fa-dot-circle-o {
+    color: red;
+    font-size: 36px; /* Adjust size as needed */
+    animation: pulse 2s infinite linear; /* Infinite spinning animation */
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(0.5);
+    }
+    50% {
+        transform: scale(0.8); /* Increase size */
+    }
+    100% {
+        transform: scale(1); /* Return to original size */
+    }
+}
+.chat-input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex: 1;
+}
+
+.chat-input {
+    flex: 1;
+    padding-right: 60px; /* Add space for the timer */
+}
+
+.timer {
+    position: absolute;
+    right: 10px;
+    margin-right: 10px;
+    font-size: 14px;
+    color: #888;
+    pointer-events: none; /* Prevent clicks on the timer */
+}
+.audioImg {
+    width: 35px;
+    margin-right: 10px;
+}
+.audiocircle-btn {
+    width: 35px;
+    height: 43px;
+    display: flex;
+    margin-right: 10px;
+    align-items: center;
+    background-color: transparent;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.audiocircle-btn:hover {
+    background-color: #e6f3ff;
+}
+.container:hover .delay1 {
+  animation: waves 2.5s linear;
+  animation-delay: 0.1s;
+}
+
+.container:hover .delay2 {
+  animation: waves 2.5s linear 0.7s forwards;
+}
+
+.container:hover .delay3 {
+  animation: waves 2.5s linear 1.3s forwards;
+}
+
+.container:hover .delay4 {
+  animation: waves 2.5s linear 1.9s forwards;
+}
+
+.svg-box {
+  position: relative;
+  z-index: 10;
+}
+
+.circle {
+  display: block;
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  background: #0194c7;
+  margin: 10px;
+  position: absolute;
+  top: 0px;
+  opacity: 0.6;
+}
+
+@keyframes waves {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+
+@keyframes bloop {
+  0% {
+    transform: scale3d(1, 1, 1);
+  }
+  30% {
+    transform: scale3d(1.25, 0.75, 1);
+  }
+  40% {
+    transform: scale3d(0.75, 1.25, 1);
+  }
+  50% {
+    transform: scale3d(1.15, 0.85, 1);
+  }
+  65% {
+    transform: scale3d(0.95, 1.05, 1);
+  }
+  75% {
+    transform: scale3d(1.05, 0.95, 1);
+  }
+  100% {
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+.audioImg:hover {
+  transform: scale(1.1);
+}
+
+
+/* Modal Backdrop */
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  z-index: 999;
+  display: none; /* Hidden by default */
+}
+
+/* Modal Container */
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  max-width: 90%;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  display: none; /* Hidden by default */
+  padding: 20px;
+}
+
+/* Modal Header */
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 10px;
+}
+
+.modal-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.close {
+  font-size: 1.5rem;
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+
+/* Modal Body */
+.modal-body {
+  padding: 20px 0;
+  font-size: 1rem;
+}
+
+/* Microphone Button */
+.mic-btn {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.mic-icon {
+  width: 40px;
+  height: 40px;
+  transition: transform 0.3s;
+}
+
+.mic-icon:hover {
+  transform: scale(1.1);
+}
+
+/* Adjusting the Circle Container Centering */
+.modal-body .circl-container {
+	position: relative;
+	height: 70px;
+	position: relative;
+	display: block;
+	width: 80px;
+	margin: 50px 130px;
+}
+
+/* Footer Buttons Container */
+.modal-footer {
+  display: flex;
+  justify-content: center;
+  gap: 20px; /* Adds spacing between buttons */
+  padding-top: 10px;
+  border-top: 1px solid #ccc;
+}
+
+/* Circular Icon Buttons */
+.icon-circle {
+  width: 50px;
+  height: 50px;
+  background-color: #f0f0f0;
+  border: none;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s, background-color 0.3s;
+}
+
+.icon-circle:hover {
+  background-color: #e0e0e0;
+  transform: scale(1.1);
+}
+
+/* Microphone Icon Styling */
+.audiomic-icon {
+  font-size: 24px;
+  color: #007bff;
+}
+
+/* Close Icon Styling */
+.close-btn .fa {
+  font-size: 24px!important;
+  color: #dc3545;
+}
+
+.circl-container.start-animation .delay1 {
+  animation: waves 2.5s linear;
+  animation-delay: 0.1s;
+}
+
+.circl-container.start-animation .delay2 {
+  animation: waves 2.5s linear 0.7s forwards;
+}
+
+.circl-container.start-animation .delay3 {
+  animation: waves 2.5s linear 1.3s forwards;
+}
+
+.circl-container.start-animation .delay4 {
+  animation: waves 2.5s linear 1.9s forwards;
+}
+
+.retry-btn {
+	background-color: #d6d6d6;
+    color: black;
+    border: 1px solid #939393;
+    padding: 2px 8px;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 0.43rem;
+    margin-right: 5px;
+}
+
+.retry-btn button:disabled {
+	background-color: #CCC;
+	cursor: not-allowed;
+}
+
+.retry-btn:hover {
+	background-color: #e6e6e6;
+    color: black;
+    border: 1px solid #aeaeae;
+}
+
+textarea[type="text"]:hover {
+    border-color: #1591ea;
+}
+
+.chat-input-area textarea {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 0.53rem !important;
+    resize: vertical; 
+    min-height: 50px;
+    max-height: 150px;
+}

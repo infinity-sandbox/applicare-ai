@@ -1,0 +1,175 @@
+<style>
+form .section label, 
+form .section input, 
+form .section textarea, 
+form .section button {
+    display: block;
+    margin-bottom: 10px;
+}
+
+form .section {
+    margin-bottom: 20px; 
+}
+
+form .section textarea, .section input {
+    width: 100%;
+}
+
+form .section select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #fff;
+    font-size: 14px;
+}
+
+form .section select:focus {
+    border-color: #4d90fe;
+    outline: none;
+}
+
+form .section {
+    margin-bottom: 20px;
+}
+
+.section .saveEnvConfig {
+   width: 100%;
+}
+</style>
+
+<div class="envContainer">
+    <h1>Admin Environment Configuration</h1>
+    <form id="admin-config-form">
+        <!-- General Information -->
+        <div class="section">
+            <h2>General Information</h2>
+            <label for="email">User Email</label>
+            <input type="email" id="email" name="email" ng-model="config.email_user" required placeholder="Enter admin email">
+            <h2>Redirect </h2>
+            <label for="myEmail">Redirect Email</label>
+            <input type="email" id="myEmail" name="myEmail" ng-model="config.MY_EMAIL" required placeholder="Enter your email"> 
+
+            <label for="myEmailPassword">Redirect Email Password</label>
+            <input type="password" id="myEmailPassword" name="myEmailPassword" ng-model="config.MY_EMAIL_PASSWORD" required placeholder="Enter your email password">
+
+            <label for="emailAppPassword">Redirect Email App Password</label>
+            <input type="password" id="emailAppPassword" name="emailAppPassword" ng-model="config.EMAIL_APP_PASSWORD" required placeholder="Enter email app password">
+        </div>
+
+        <!-- Database Configuration -->
+        <div class="section">
+            <h2>Database Configuration</h2>
+            <label for="dbms">Database Management System</label>
+            <input type="text" id="dbms" name="dbms" ng-model="config.DB_MS" required placeholder="Enter DBMS">
+
+            <label for="dbUser">Database User</label>
+            <input type="text" id="dbUser" name="dbUser" ng-model="config.DB_USER" required placeholder="Enter database user">
+
+            <label for="dbPassword">Database Password</label>
+            <input type="password" id="dbPassword" name="dbPassword" ng-model="config.DB_PASSWORD" required placeholder="Enter database password">
+
+            <label for="dbHost">Database Host</label>
+            <input type="text" id="dbHost" name="dbHost" ng-model="config.DB_HOST" required placeholder="Enter database host">
+
+            <label for="dbPort">Database Port</label>
+            <input type="number" id="dbPort" name="dbPort" ng-model="config.DB_PORT" required placeholder="Enter database port">
+
+            <label for="database">Database Name</label>
+            <input type="text" id="database" name="database" ng-model="config.DB" required placeholder="Enter database name">
+
+            <label for="databaseTables">Database Tables</label> 
+            <input type="text" id="databaseTables" name="databaseTables" ng-model="config.databaseTables" placeholder="Enter database tables as comma seperated" />
+        </div>
+
+        <!-- OpenAI Configuration -->
+        <div class="section">
+            <h2>OpenAI Configuration</h2>
+            <label for="model">Model</label>
+            <input type="text" id="model" name="model" ng-model="config.MODEL" required placeholder="Enter model name">
+
+            <label for="openaiApiKey">OpenAI API Key</label>
+            <input type="password" id="openaiApiKey" name="openaiApiKey" ng-model="config.OPENAI_API_KEY" required placeholder="Enter OpenAI API key">
+        </div>
+
+        <!-- Weaviate Configuration -->
+        <div class="section">
+            <h2>Weaviate Configuration</h2>
+            <label for="weaviateUrl">Weaviate URL</label>
+            <input type="url" id="weaviateUrl" name="weaviateUrl" ng-model="config.WEAVIATE_URL" required placeholder="Enter Weaviate URL">
+
+            <label for="weaviateApiKey">Weaviate API Key</label>
+            <input type="password" id="weaviateApiKey" name="weaviateApiKey" ng-model="config.WEAVIATE_API_KEY" required placeholder="Enter Weaviate API key">
+        </div>
+
+        <!-- Redis Configuration -->
+        <div class="section">
+            <h2>Redis Configuration</h2>
+            <label for="redisHost">Redis Host</label>
+            <input type="text" id="redisHost" name="redisHost" ng-model="config.REDIS_HOST" required placeholder="Enter Redis host">
+
+            <label for="redisPort">Redis Port</label>
+            <input type="number" id="redisPort" name="redisPort" ng-model="config.REDIS_PORT" required placeholder="Enter Redis port">
+        </div>
+
+        <!-- API Configuration -->
+        <div class="section">
+            <h2>API Configuration</h2>
+            <label for="frontendApiUrl">Frontend API URL</label>
+            <input type="url" id="frontendApiUrl" name="frontendApiUrl" ng-model="config.FRONTEND_API_URL" required placeholder="Enter frontend API URL">
+
+            <label for="backendApiUrl">Backend API URL</label>
+            <input type="url" id="backendApiUrl" name="backendApiUrl" ng-model="config.BACKEND_API_URL" required placeholder="Enter backend API URL">
+        </div>
+
+        <!-- Rate Limiting -->
+        <div class="section">
+            <h2>Rate Limiting</h2>
+            <label for="requestsPerWindow">Requests per Window</label>
+            <input type="number" id="requestsPerWindow" name="requestsPerWindow" ng-model="config.REQUESTS_PER_WINDOW" required placeholder="Enter requests per window">
+
+            <label for="timeWindow">Time Window (seconds)</label>
+            <input type="number" id="timeWindow" name="timeWindow" ng-model="config.TIME_WINDOW" required placeholder="Enter time window in seconds">
+        </div>
+
+        <!-- HTTP Methods -->
+        <div class="section">
+            <h2>HTTP Methods Configuration</h2>
+            <label for="allowedMethods">Allowed HTTP Methods</label> 
+            <div id="allowedMethods" class="mb-10"></div> 
+            
+            <label for="restrictedMethods">Restricted HTTP Methods</label> 
+            <div id="restrictedMethods" class="mb-10"></div> 
+            
+            <label for="criticalRestrictedMethods">Critical Restricted HTTP Methods</label> 
+            <div id="criticalRestrictedMethods" class="mb-10"></div> 
+        </div>
+        
+        <!-- Authentication Configuration -->
+        <div class="section">
+            <h2>Authentication Configuration</h2>
+            <label for="backendCorsOrigins">Backend CORS Origins</label>
+            <input type="text" id="backendCorsOrigins" name="backendCorsOrigins" ng-model="config.backendCorsOrigins" placeholder="Enter CORS origins as comma seperated" />
+            
+            <label for="accessTokenExpire">Access Token Expire Minutes</label>
+            <input type="number" id="accessTokenExpire" name="accessTokenExpire" ng-model="config.ACCESS_TOKEN_EXPIRE_MINUTES" required placeholder="Enter access token expiration time">
+
+            <label for="refreshTokenExpire">Refresh Token Expire Minutes</label>
+            <input type="number" id="refreshTokenExpire" name="refreshTokenExpire" ng-model="config.REFRESH_TOKEN_EXPIRE_MINUTES" required placeholder="Enter refresh token expiration time">
+
+            <label for="algorithm">Algorithm</label>
+            <input type="text" id="algorithm" name="algorithm" ng-model="config.ALGORITHM" required placeholder="Enter algorithm">
+
+            <label for="jwtSecretKey">JWT Secret Key</label>
+            <input type="password" id="jwtSecretKey" name="jwtSecretKey" ng-model="config.JWT_SECRET_KEY" required placeholder="Enter JWT secret key">
+
+            <label for="jwtRefreshSecretKey">JWT Refresh Secret Key</label>
+            <input type="password" id="jwtRefreshSecretKey" name="jwtRefreshSecretKey" ng-model="config.JWT_REFRESH_SECRET_KEY" required placeholder="Enter JWT refresh secret key">
+        </div>
+
+        <!-- Submit -->
+        <div class="section">
+            <button class="saveEnvConfig" ng-click="saveAdminEnvConfig()">Save Configurations</button>
+        </div>
+    </form>
+</div>

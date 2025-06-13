@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE urlrewrite
+PUBLIC "-//tuckey.org//DTD UrlRewrite 4.0//EN"
+"http://www.tuckey.org/res/dtds/urlrewrite4.0.dtd">
+
+<urlrewrite>
+    <!-- Redirect all paths under /genie to index.html for AngularJS routing -->
+    <rule>
+        <from>^/genie/(.*)$</from>
+        <to>/genie/index.html</to>
+    </rule>
+</urlrewrite>
