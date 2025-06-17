@@ -10,7 +10,7 @@ def read_file(filename):
 def check_required_files():
     """Ensure required files exist before setup."""
     base_dir = os.path.dirname(os.path.abspath(__file__))
-    required_files = ['requirements.txt', 'readme.md']
+    required_files = ['requirements.txt', 'readme.md'] 
     for filename in required_files:
         # Create the full path to the required file
         file_path = os.path.join(base_dir, filename)

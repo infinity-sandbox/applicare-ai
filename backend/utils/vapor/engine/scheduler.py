@@ -1,7 +1,6 @@
 from apscheduler.schedulers.background import BackgroundScheduler
 from utils.vapor.engine.cleanup import cleanup_workspace_and_docker, fetch_data
-import time
-import logging
+import time, logging
 from apscheduler.schedulers.asyncio import AsyncIOScheduler
 import asyncio
 

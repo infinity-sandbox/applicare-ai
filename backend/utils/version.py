@@ -7,7 +7,7 @@ def get_version_and_build(version_file='version') -> tuple:
 
     # Check if the file exists and read the current version and build time
     if os.path.exists(version_file):
-         with open(version_file, 'r') as file:
+        with open(version_file, 'r') as file:
             lines = file.readlines()
             if len(lines) >= 2:
                 x, y, z = map(int, lines[0].strip().split('.'))
